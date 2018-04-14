@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Resize SVG and add frame for printing in a given format.
 # Written by Ilya Zverev, licensed WTFPL.
