@@ -169,7 +169,9 @@ def process_stream(options):
     if 'output' not in options or options['output'] is None or options['output'] == '':
         options['output'] = options['input']
 
-    tree = etree.parse(sys.stdin if options['input'] == '-' else options['input'])
+    tree = etree.parse(
+        sys.stdin if options['input'] == '-' else options['input'],
+        parser=etree.XMLParser(huge_tree=True))
     resize_svg(tree, options)
     tree.write(sys.stdout if options['output'] == '-' else options['output'])
 
